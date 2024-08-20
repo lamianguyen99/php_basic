@@ -27,7 +27,7 @@ $result = $conn->query($sql);
 		echo "<td>" . $rows['name'] . "</td>";
 		echo "<td>" . $rows['email'] . "</td>";
 		echo "<td>" . $rows['password'] . "</td>";
-		echo "<td><a href='edit.php?id=$rows[id]'>EDIT</a></td> <td><a href='delete.php?id=$rows[id]'></a></td>";
+		echo "<td><a href='edit.php?id=$rows[id]'>EDIT</a>  </td> <td><a href='delete.php?id=$rows[id]'>DELETE</a></td><br>";
 	
 	}
 	?>

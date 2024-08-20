@@ -11,4 +11,3 @@ else{
 }
 
 header("Location: index.php?message=" . $message . "");
-
