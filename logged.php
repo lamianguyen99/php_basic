@@ -1,10 +1,11 @@
 <?php 
 session_start();
 if ($_SESSION['LOGGEDIN'] == 1){
-	echo "<h1>WELCOME TO CRUD PAGE</h1>";
+
+	header("Location: index.php?message=" . $message . "");
 }	
 else{
-	echo "<title>Fail web page</title>";	
-	echo "<h1>FAILLLLLLLLLLLLLLLLL</h1>";
+	
+	header("Location: failpage.php?message=" . $message . "");
 }
 ?>

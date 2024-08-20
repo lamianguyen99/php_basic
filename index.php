@@ -1,4 +1,14 @@
 <?php
+
+session_start();
+if ($_SESSION['LOGGEDIN'] == 1){
+	echo "<h1>SUCCESS LOGIN</h1>";
+}
+else{
+        header("Location: login.php?message=" . $message . "");
+
+}
+
 // Create database connection ussing config file
 include_once("config.php");
 
@@ -27,7 +37,8 @@ $result = $conn->query($sql);
 		echo "<td>" . $rows['name'] . "</td>";
 		echo "<td>" . $rows['email'] . "</td>";
 		echo "<td>" . $rows['password'] . "</td>";
-		echo "<td><a href='edit.php?id=$rows[id]'>EDIT</a>  </td> <td><a href='delete.php?id=$rows[id]'>DELETE</a></td><br>";
+		$confirm = "are you sure?";
+		echo "<td><a href='edit.php?id=$rows[id]'>EDIT</a>  </td> <td><a href='delete.php?id=$rows[id]' onclick='return confirm($confirm)'>DELETE</a></td><br>";
 	
 	}
 	?>
