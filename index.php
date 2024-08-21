@@ -24,25 +24,28 @@ $result = $conn->query($sql);
 <title>HOME PAGE</title>
 </header>
 <body>
-<a href="add.php">ADD INFOR</a>
+<a href="add.php">ADD INFO</a>
 <br>
 
 <table>
 	<tr>
 	<th> NAME</th> <th>EMAIL</th> <th>PASSWORD</th> <th>ACTION</th>
 	</tr>
-	<tr>
+	
 	<?php
 	while ($rows = $result->fetch_assoc()){
+		echo "<tr>";
 		echo "<td>" . $rows['name'] . "</td>";
 		echo "<td>" . $rows['email'] . "</td>";
 		echo "<td>" . $rows['password'] . "</td>";
-		echo "<td><a href='edit.php?id=$rows[id]'>EDIT</a>  </td><br><br/> <td><a href='delete.php?id=$rows[id]'>DELETE</a></td><br><br/>";
+		echo "<td><a href='edit.php?id=$rows[id]'>EDIT</a></td>"; 
+		echo "<td><a href='delete.php?id=$rows[id] 'onclick=\"return confirm('are you sure?')\">DELETE</a></td>";
+		echo "</tr>";
 			
 	}
 	?>
 
-	</tr>
+	
 </table>
 </body>
 </html>

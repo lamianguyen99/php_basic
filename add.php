@@ -41,7 +41,6 @@ if(isset($_POST['Submit'])){
 		echo "có rồi";
 	}
 	else {
-		echo "chưa có";
 		$sql = "insert into user_x_e_s (name, email, password) values ('$name','$email','$pass');";
 		$conn->query($sql);
 		echo "addd success";

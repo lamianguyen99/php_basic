@@ -6,7 +6,6 @@ $id = $_GET['id'];
 $sql = "select * from user_x_e_s where id = $id;";
 $kq = $conn->query($sql);
 $result = $kq->fetch_assoc();
-var_dump($result);
 $name = $result['name'];
 $email = $result['email'];
 $pass = $result['password'];

@@ -1,15 +1,22 @@
 <?php
 session_start();
+$servername = "localhost";
+$username = "lara_user";
+$password = "123456789";
+$dbname = "laravel";
 
-include_once('config.php');
+$conn = new mysqli($servername, $username, $password, $dbname);
 
+// Kiểm tra kết nối
+if ($conn->connect_error) {
+    die("Kết nối thất bại: " . $conn->connect_error);
+}
 $page = $_POST['registerform']; // Setting the page value
 $user = $_POST['usrnme']; // Setting the user value
 $mail = $_POST['mail'];
 $pass = $_POST['pwd']; // Setting the pass value
 //
-var_dump($_GET['pwd']);
-var_dump($_POST['pwd']);
+
 if($page == 1)
 {
 	//This means that the page is the register form so the register form code goes here

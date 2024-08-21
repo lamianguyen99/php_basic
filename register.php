@@ -1,11 +1,18 @@
-<?php
-echo "<title>Register Here!</title>"; //Page title
-echo "<h1>Register Page</h1>"; //Heading
-echo "<form action='finished.php' method='post'>"; 
-echo "Username: <input type='text' name='usrnme' /><br>";  //Username box
-echo "Password: <input type='password' name='pwd' />  <br>"; //Password box
-echo "<input type='hidden' name='registerform' value='1'>"; //Hidden Field.
-echo "<input type='submit' value='submit'>"; //Submit button.
-echo "</form>"; 
-?>
+<!DOCTYPE html>
+<html>
+<header>
+<title>Register Here!</title>
+<h1>Register Page</h1>
+</header>
+<body>
+<form action='finished.php' method='post'>
+Username: <input type='text' name='usrnme' /><br>
+Password: <input type='password' name='pwd' />  <br>
+Email: <input type='email' name='mail' />  <br>
+<input type='hidden' name='registerform' value='1'>
+<input type='submit' value='submit'>
+</form>
+</body>
+</html>
+
 
